@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIMOD Horario | Gestionar asignaturas</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- Mockup by Fran -->
+    <div class="contenedor-app">
+        <aside class="barra-lateral">
+            <div class="marca"><span class="icono-marca">H</span><span>PIMOD Horario</span></div>
+            <nav class="menu-principal" aria-label="Navegación principal">
+                <a class="elemento-nav" href="index.html"><span class="icono-nav">+</span><span>Crear horario</span></a>
+                <a class="elemento-nav" href="index.html"><span class="icono-nav">☰</span><span>Gestionar horarios</span></a>
+                <a class="elemento-nav activo" href="gestionar_asignaturas.html"><span class="icono-nav">▥</span><span>Gestionar asignaturas</span></a>
+                <a class="elemento-nav" href="#"><span class="icono-nav">♧</span><span>Gestionar profesores</span></a>
+                <a class="elemento-nav" href="#"><span class="icono-nav">⚙</span><span>Configuración</span></a>
+            </nav>
+        </aside>
+        <main class="contenido">
+            <header class="barra-superior">
+                <div><h1>Gestionar asignaturas</h1><p>Consulta y organiza las asignaturas disponibles</p></div>
+                <div class="acciones-superiores">
+                    <button class="boton-principal" type="button"><span class="mas">+</span>Nueva asignatura</button>
+                    <div class="boton-perfil"><span class="avatar">JD</span><select class="menu-perfil" aria-label="Opciones de perfil"><option selected>Juan Díaz</option><option>Mi perfil</option><option>Cerrar sesión</option></select></div>
+                </div>
+            </header>
+            <section class="panel-asignaturas" aria-label="Lista de asignaturas">
+                <div class="cabecera-panel"><div><h2>Asignaturas</h2><p>2 asignaturas registradas</p></div><input class="buscador" type="search" placeholder="Buscar asignatura" aria-label="Buscar asignatura"></div>
+                <div class="tabla-contenedor">
+                    <table class="tabla-asignaturas">
+                        <thead><tr><th>Asignatura</th><th>Profesor principal</th><th>Color</th><th>Acciones</th></tr></thead>
+                        <tbody>
+                            <tr><td><span class="punto-color" style="background-color: #397ff0"></span>Desarrollo Web en Entorno Servidor</td><td>Ana Martínez</td><td><span class="etiqueta-color">#397ff0</span></td><td><button class="boton-accion" type="button">Editar</button><button class="boton-accion borrar" type="button">Eliminar</button></td></tr>
+                            <tr><td><span class="punto-color" style="background-color: #8e44ad"></span>Desarrollo Web en Entorno Cliente</td><td>Carlos Gómez</td><td><span class="etiqueta-color">#8e44ad</span></td><td><button class="boton-accion" type="button">Editar</button><button class="boton-accion borrar" type="button">Eliminar</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

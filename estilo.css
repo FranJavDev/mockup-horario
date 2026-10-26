@@ -1,0 +1,513 @@
+/* Colores y medidas que se usan en toda la página. */
+:root {
+    --azul: #397ff0;
+    --azul-suave: #edf5ff;
+    --texto: #172033;
+    --texto-suave: #657187;
+    --borde: #e6eaf0;
+    --fondo: #f8fafc;
+    --blanco: #ffffff;
+}
+
+/* Así el padding no descuadra los tamaños. */
+* {
+    box-sizing: border-box;
+}
+
+/* Fondo general de la página. */
+body {
+    margin: 0;
+    color: var(--texto);
+    background: var(--fondo);
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Los botones usan la misma letra que el resto. */
+button {
+    font: inherit;
+}
+
+/* Los enlaces del menú se ven como botones, pero sí cambian de página. */
+a {
+    text-decoration: none;
+}
+
+/* Estructura principal hecha con Grid. */
+.contenedor-app {
+    display: grid;
+    grid-template-columns: 184px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+/* Menú lateral de la izquierda. */
+.barra-lateral {
+    background: var(--blanco);
+    border-right: 1px solid var(--borde);
+}
+
+/* Nombre y logo de la aplicación. */
+.marca {
+    height: 55px;
+    display: grid;
+    grid-template-columns: 23px 1fr;
+    align-items: center;
+    column-gap: 9px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--borde);
+    color: #20283a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Cuadradito azul del logo. */
+.icono-marca {
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--azul);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Opciones del menú lateral. */
+.menu-principal {
+    display: grid;
+    gap: 4px;
+    padding: 7px 9px;
+}
+
+.elemento-nav {
+    height: 33px;
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    padding: 0 11px;
+    border: 0;
+    border-radius: 6px;
+    color: var(--texto-suave);
+    background: transparent;
+    text-align: left;
+    font-size: 11px;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.elemento-nav:visited {
+    color: var(--texto-suave);
+}
+
+.elemento-nav:hover {
+    color: var(--azul);
+    background: var(--azul-suave);
+}
+
+.elemento-nav:hover .icono-nav {
+    color: var(--azul);
+}
+
+.elemento-nav.activo {
+    color: var(--azul);
+    background: var(--azul-suave);
+    font-weight: 600;
+}
+
+.icono-nav {
+    width: 14px;
+    color: #718096;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+}
+
+.elemento-nav.activo .icono-nav {
+    color: var(--azul);
+}
+
+/* Parte principal donde va el horario. */
+.contenido {
+    min-width: 0;
+}
+
+/* Cabecera con el título y los botones. */
+.barra-superior {
+    min-height: 55px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+    padding: 8px 24px 8px 29px;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+
+h1 {
+    margin: 0 0 2px;
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+}
+
+.barra-superior p {
+    margin: 0;
+    color: #778398;
+    font-size: 10px;
+}
+
+/* Botones de la cabecera. */
+.acciones-superiores {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 17px;
+}
+
+/* Botón azul principal. */
+.boton-principal {
+    height: 27px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 7px;
+    padding: 0 13px;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--azul);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boton-principal:hover {
+    background: #286bd7;
+    box-shadow: 0 3px 8px rgba(57, 127, 240, 0.25);
+}
+
+.mas {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 0;
+}
+
+/* Selector del usuario en forma de cápsula. */
+.boton-perfil {
+    height: 31px;
+    display: grid;
+    grid-template-columns: 23px auto;
+    align-items: center;
+    column-gap: 8px;
+    padding: 0 11px 0 6px;
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    color: #394357;
+    background: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.boton-perfil:hover {
+    border-color: #b9d1ff;
+    background: #f8fbff;
+}
+
+.menu-perfil,
+.menu-asignatura {
+    border: 0;
+    color: #68758a;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+}
+
+.menu-perfil:hover,
+.menu-asignatura:hover {
+    color: var(--azul);
+}
+
+.menu-perfil {
+    width: 80px;
+    padding: 0;
+    color: #394357;
+    appearance: auto;
+    font-size: 15px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.menu-perfil:focus,
+.menu-asignatura:focus {
+    outline: 2px solid #b9d1ff;
+    outline-offset: 2px;
+}
+
+/* Círculo con las iniciales del usuario. */
+.avatar {
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #6a7485;
+    background: #e9edf2;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+/* Las cinco columnas del horario. */
+.horario {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 17px;
+    padding: 27px 24px 50px 29px;
+}
+
+/* Panel donde se muestra la lista de asignaturas. */
+.panel-asignaturas {
+    margin: 27px 29px 50px;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: var(--blanco);
+}
+
+.cabecera-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.cabecera-panel h2 {
+    margin: 0 0 4px;
+    font-size: 15px;
+}
+
+.cabecera-panel p {
+    margin: 0;
+    color: #778398;
+    font-size: 10px;
+}
+
+.buscador {
+    width: 210px;
+    height: 31px;
+    padding: 0 11px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    color: var(--texto);
+    font: inherit;
+    font-size: 10px;
+}
+
+.buscador:hover {
+    border-color: #b9d1ff;
+}
+
+.buscador:focus {
+    outline: 2px solid #b9d1ff;
+    outline-offset: 2px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-asignaturas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+.tabla-asignaturas th {
+    padding: 12px 22px;
+    color: var(--texto-suave);
+    background: #fafbfc;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.tabla-asignaturas td {
+    height: 58px;
+    padding: 10px 22px;
+    border-top: 1px solid var(--borde);
+    color: #30394a;
+}
+
+.punto-color {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 8px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.etiqueta-color {
+    padding: 4px 7px;
+    border-radius: 4px;
+    color: #697488;
+    background: #f0f2f5;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 10px;
+}
+
+.boton-accion {
+    margin-right: 8px;
+    padding: 5px 9px;
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    color: var(--azul);
+    background: var(--blanco);
+    font-size: 10px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.boton-accion:hover {
+    border-color: #b9d1ff;
+    background: var(--azul-suave);
+}
+
+.boton-accion.borrar {
+    color: #c44d5b;
+}
+
+.boton-accion.borrar:hover {
+    border-color: #efb4bc;
+    background: #fff3f4;
+}
+
+.encabezado-dia {
+    height: 27px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    justify-content: space-between;
+    padding: 0 0 0 0;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.lista-clases {
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: var(--blanco);
+}
+
+.tarjeta-clase {
+    min-height: 72px;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: center;
+    padding: 8px 26px 8px 10px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tarjeta-clase:last-child {
+    border-bottom: 0;
+}
+
+.tarjeta-clase.recreo {
+    background: #f3f4f6;
+}
+
+.hora-clase {
+    margin-bottom: 3px;
+    color: #667287;
+    font-size: 9px;
+    line-height: 1;
+}
+
+.nombre-clase {
+    color: #111827;
+    font-size: 10px;
+    line-height: 1.1;
+}
+
+.menu-asignatura {
+    width: 100%;
+    min-height: 24px;
+    margin-top: 1px;
+    padding: 0;
+    appearance: auto;
+    color: #8a94a5;
+    font-size: 10px;
+}
+
+@media (max-width: 900px) {
+    /* En tablet caben tres días por fila. */
+    .horario {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    /* En móvil dejamos el menú en una columna estrecha de iconos. */
+    .contenedor-app {
+        grid-template-columns: 65px minmax(0, 1fr);
+    }
+
+    .barra-lateral {
+        width: 65px;
+    }
+
+    .marca {
+        grid-template-columns: 23px;
+        padding: 0;
+    }
+
+    .marca > span:last-child,
+    .elemento-nav > span:last-child {
+        display: none;
+    }
+
+    .elemento-nav {
+        grid-template-columns: 14px;
+        padding: 0;
+    }
+
+    /* En móvil la cabecera se coloca en dos filas. */
+    .barra-superior {
+        grid-template-columns: 1fr;
+        align-items: start;
+        padding: 17px;
+    }
+
+    .acciones-superiores {
+        width: 100%;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+
+    .horario {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 20px 17px 40px;
+    }
+
+    .panel-asignaturas {
+        margin: 20px 17px 40px;
+    }
+
+    .cabecera-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador {
+        width: 100%;
+    }
+}
