@@ -23,7 +23,7 @@
             <header class="barra-superior">
                 <div><h1>Gestionar asignaturas</h1><p>Consulta y organiza las asignaturas disponibles</p></div>
                 <div class="acciones-superiores">
-                    <button class="boton-principal" type="button"><span class="mas">+</span>Nueva asignatura</button>
+                    <button class="boton-principal" id="abrir-alta-asignatura" type="button"><span class="mas">+</span>Nueva asignatura</button>
                     <div class="boton-perfil"><span class="avatar">JD</span><select class="menu-perfil" aria-label="Opciones de perfil"><option selected>Juan Díaz</option><option>Mi perfil</option><option>Cerrar sesión</option></select></div>
                 </div>
             </header>
@@ -41,5 +41,39 @@
             </section>
         </main>
     </div>
+    <dialog class="modal-alta" id="modal-alta-asignatura" aria-labelledby="titulo-alta">
+        <section class="tarjeta-formulario">
+            <div class="cabecera-formulario">
+                <h2 id="titulo-alta">Alta de Asignatura</h2>
+                <button class="cerrar-modal" id="cerrar-alta-asignatura" type="button" aria-label="Cerrar formulario">×</button>
+            </div>
+            <form class="formulario-asignatura" method="dialog">
+                <div class="campo-formulario">
+                    <label for="nombre-asignatura">Asignatura</label>
+                    <input id="nombre-asignatura" name="asignatura" type="text" placeholder="Ej. Matemáticas, Física, etc." required>
+                </div>
+                <div class="campo-formulario campo-profesor">
+                    <label for="profesor-asignatura">Profesor</label>
+                    <div class="fila-profesor">
+                        <select id="profesor-asignatura" name="profesor" required>
+                            <option value="" selected disabled>Seleccionar profesor</option>
+                            <option value="ana-martinez">Ana Martínez</option>
+                            <option value="carlos-gomez">Carlos Gómez</option>
+                        </select>
+                        <button class="boton-anadir" type="button">Añadir</button>
+                    </div>
+                </div>
+                <button class="boton-guardar-asignatura" type="submit">Guardar Asignatura</button>
+            </form>
+            </section>
+    </dialog>
+    <script>
+        const modalAlta = document.querySelector("#modal-alta-asignatura");
+        const abrirAlta = document.querySelector("#abrir-alta-asignatura");
+        const cerrarAlta = document.querySelector("#cerrar-alta-asignatura");
+
+        abrirAlta.addEventListener("click", () => modalAlta.showModal());
+        cerrarAlta.addEventListener("click", () => modalAlta.close());
+    </script>
 </body>
 </html>
